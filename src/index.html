@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>Document</title>
   </head>
   <body>
-  
+    <form>
+      <label for='city-name'>
+        <input id='city-name' type='text'>
+        <button type='submit' id='search-button'>Search</button>
+      </label>
+    </form>
+    <div id='info-container'>
+      <div id='city-container'>
+        <p id='city'></p>
+      </div>
+      <div id='weather-info'>
+        <div id='numbers'>
+          <p id='temperature'></p>
+          <p id='feels-like'></p>
+          <p id='wind'></p>
+          <p id='humidity'></p>
+        </div>
+        <div id='condition-container'>
+          <p id='condition'></p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

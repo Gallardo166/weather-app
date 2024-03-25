@@ -1,6 +1,3 @@
-import { getWeatherInfo } from './api';
+import initWeatherPage from './weather-page';
 
-getWeatherInfo('kyoto')
-  .then(function(resolve) {
-    console.log(resolve);
-  });
+initWeatherPage();
