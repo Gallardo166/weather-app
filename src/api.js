@@ -1,7 +1,12 @@
 const fetchWeatherData = async function(cityName) {
-  const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=62f2a391579843b4944155109241903&q=${cityName}`);
-  const data = await response.json();
-  return data;
+    try {
+      const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=62f2a391579843b4944155109241903&q=${cityName}`);
+      if (response.status === 400) {throw new Error('No matching location found.')}
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      return 'error';
+    }
 };
 
 const processWeatherData = function(data) {
@@ -33,9 +38,14 @@ const getWeatherInfo = async function(cityName) {
   windSpeed.textContent = '';
   humidity.textContent = '';
   condition.textContent = 'Loading...';
-  const data = await fetchWeatherData(cityName);
-  const weatherInfo = processWeatherData(data);
-  return weatherInfo;
+  try {
+    const data = await fetchWeatherData(cityName);
+    const weatherInfo = processWeatherData(data);
+    return weatherInfo;
+  } catch (error) {
+    condition.textContent = 'No matching location found.'
+    return 'error';
+  }
 }
 
 export { getWeatherInfo };

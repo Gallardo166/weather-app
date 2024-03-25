@@ -17,9 +17,13 @@ const init = function() {
     searchButton.addEventListener('click', (event) => {
       getWeatherInfo(input.value)
         .then(function(resolve) {
+          if (resolve === 'error') {throw new Error}
           displayWeatherInfo(resolve, tempUnitButton.dataset.unit);
           searchButton.setAttribute('data-weather-info', JSON.stringify(resolve));
-      });
+        })
+        .catch(function(error) {
+          return;
+        });
       input.value = '';
       event.preventDefault();
     })
