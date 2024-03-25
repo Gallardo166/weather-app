@@ -22,6 +22,7 @@ const init = function() {
           searchButton.setAttribute('data-weather-info', JSON.stringify(resolve));
         })
         .catch(function(error) {
+          searchButton.dataset.weatherInfo = '';
           return;
         });
       input.value = '';
