@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Document</title>
+  </head>
+  <body data-condition='none'>
+    <form>
+      <label for='city-name'>
+        <input id='city-name' type='text' autocomplete='off'>
+        <button type='submit' id='search-button' data-weather-info=''>Search</button>
+      </label>
+    </form>
+    <button id='temperature-unit-button' data-unit='celsius'>°C</button>
+    <div id='info-container'>
+        <p id='city'></p>
+        <p id='temperature'></p>
+        <p id='feels-like'></p>
+        <p id='wind'></p>
+        <p id='humidity'></p>
+        <p id='condition'></p>
+    </div>
+  </body>
+</html>
