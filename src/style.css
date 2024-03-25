@@ -73,7 +73,7 @@ form {
 
   input, button {
     box-sizing: border-box;
-    height: 28px;
+    height: 32px;
     font-family: poppins-regular;
   }
 }
@@ -100,12 +100,14 @@ button:hover {
   height: 32px;
   font-size: 1.2rem;
   font-family: poppins-medium;
+  display: flex;
+  justify-content: center;
 }
 
 #info-container {
   width: 370px;
   margin-top: 64px;
-  margin-left: 36px;
+  align-self: center;
   padding: 20px 0 20px 24px;
   border-radius: 15px;
   display: grid;
