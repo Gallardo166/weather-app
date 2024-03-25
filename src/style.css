@@ -1,0 +1,105 @@
+@font-face {
+  font-family: poppins-bold;
+  src: url(./fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: poppins-medium;
+  src: url(./fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: poppins-regular;
+  src: url(./fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: poppins-light;
+  src: url(./fonts/Poppins-Light.ttf);
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: poppins-light;
+}
+
+form {
+  align-self: flex-end;
+  padding: 20px;
+
+  input {
+    width: 200px;
+  }
+
+  input, button {
+    box-sizing: border-box;
+    height: 28px;
+    font-family: poppins-regular;
+  }
+}
+
+button {
+  appearance: none;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(0 0 0 / 0.3);
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#temperature-unit-button {
+  flex-grow: 0;
+  align-self: flex-end;
+  margin-top: -8px;
+  margin-right: 20px;
+  width: 36px;
+  height: 32px;
+  font-size: 1.2rem;
+  font-family: poppins-medium;
+}
+
+#info-container {
+  margin-top: 64px;
+  padding-left: 124px;
+  display: grid;
+  grid-template: 24px 52px repeat(3, 36px) / 96px 160px;
+  column-gap: 28px;
+  align-items: center;
+  font-size: 1.1rem;
+
+  #city {
+    grid-area: 2 / 1 / span 1 / span 2;
+    font-size: 1.6rem;
+    font-family: poppins-medium;
+    padding-bottom: 14px;
+  }
+
+  #temperature {
+    grid-area: 3 / 1 / span 3 / span 1;
+    font-size: 4rem;
+    font-family: poppins-bold;
+
+    .temperature-unit {
+      font-size: 1.2rem;
+      vertical-align: text-top;
+    }
+  }
+
+  #condition {
+    grid-area: 1 / 1 / span 1 / span 2;
+    font-size: 1.4rem;
+    font-family: poppins-regular;
+  }
+}

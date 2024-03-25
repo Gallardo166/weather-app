@@ -47,18 +47,25 @@ const init = function() {
 
   const displayWeatherInfoInCelsius = function(data) {
     cityName.textContent = `${data.cityName}, ${data.countryName}`;
-    temperature.textContent = data.celsiusTemp;
-    feelsLike.textContent = `Feels like: ${data.celsiusFeelsLike}`;
+    temperature.innerHTML = `
+      ${data.celsiusTemp}<span class='temperature-unit'>°C</span>
+    `;
+    feelsLike.innerHTML = `
+      Feels like: ${data.celsiusFeelsLike}<span class='temperature-unit'> °C</span>
+    `;
     windSpeed.textContent = `Wind: ${data.windSpeed} kph`;
     humidity.textContent = `Humidity: ${data.humidity}%`;
     condition.textContent = data.condition;
-
   }
 
   const displayWeatherInfoInFahrenheit = function(data) {
     cityName.textContent = `${data.cityName}, ${data.countryName}`;
-    temperature.textContent = data.fahrenheitTemp;
-    feelsLike.textContent = `Feels like: ${data.fahrenheitFeelsLike}`;
+    temperature.innerHTML = `
+      ${data.fahrenheitTemp}<span class='temperature-unit'>°F</span>
+    `;
+    feelsLike.innerHTML = `
+      Feels like: ${data.fahrenheitFeelsLike}<span class='temperature-unit'> °F</span>
+    `;
     windSpeed.textContent = `Wind: ${data.windSpeed} kph`;
     humidity.textContent = `Humidity: ${data.humidity}%`;
     condition.textContent = data.condition;
